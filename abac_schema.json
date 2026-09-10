@@ -1,0 +1,37 @@
+{
+  "": {
+    "entityTypes": {
+      "Agent": {
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "role": {"type": "String", "required": false},
+            "department": {"type": "String", "required": false},
+            "course_scope": {"type": "String", "required": false},
+            "id": {"type": "String", "required": false}
+          }
+        },
+        "memberOfTypes": []
+      },
+      "Resource": {
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "type": {"type": "String", "required": false},
+            "course": {"type": "String", "required": false},
+            "sensitivity": {"type": "String", "required": false},
+            "path": {"type": "String", "required": false},
+            "id": {"type": "String", "required": false}
+          }
+        },
+        "memberOfTypes": ["Resource"]
+      }
+    },
+    "actions": {
+      "read": {"appliesTo": {"principalTypes": ["Agent"], "resourceTypes": ["Resource"], "context": {"type": "Record", "attributes": {"time": {"type": "String", "required": false}, "ip": {"type": "String", "required": false}}}}},
+      "write": {"appliesTo": {"principalTypes": ["Agent"], "resourceTypes": ["Resource"], "context": {"type": "Record", "attributes": {"time": {"type": "String", "required": false}, "ip": {"type": "String", "required": false}}}}},
+      "search": {"appliesTo": {"principalTypes": ["Agent"], "resourceTypes": ["Resource"], "context": {"type": "Record", "attributes": {"time": {"type": "String", "required": false}, "ip": {"type": "String", "required": false}}}}},
+      "execute": {"appliesTo": {"principalTypes": ["Agent"], "resourceTypes": ["Resource"], "context": {"type": "Record", "attributes": {"time": {"type": "String", "required": false}, "ip": {"type": "String", "required": false}}}}}
+    }
+  }
+}

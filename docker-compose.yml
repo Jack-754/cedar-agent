@@ -10,12 +10,12 @@ services:
       - CEDAR_AGENT_PORT=8180
       - CEDAR_AGENT_ADDR=0.0.0.0
       - CEDAR_AGENT_LOG_LEVEL=info
-      - CEDAR_AGENT_AUTHENTICATION=${CEDAR_AGENT_AUTHENTICATION:-}
+      - CEDAR_AGENT_AUTHENTICATION=${CEDAR_AGENT_AUTHENTICATION:?Set a Cedar Agent API token}
     volumes:
       # Optional: Mount data files for persistence
-      - ./cedar_agent_data.json:/app/data.json:ro
-      - ./cedar_agent_policies.json:/app/policies.json:ro
-      - ./cedar_agent_schema.json:/app/schema.json:ro
+      - ./abac_data.json:/app/data.json:ro
+      - ./abac_policies.json:/app/policies.json:ro
+      - ./abac_schema.json:/app/schema.json:ro
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8180/v1/healthy"]
       interval: 30s
@@ -56,4 +56,3 @@ services:
 networks:
   cedar-network:
     driver: bridge
-

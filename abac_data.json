@@ -1,0 +1,22 @@
+[
+  {"uid":{"type":"Agent","id":"agent_summarizer"},"attrs":{"role":"summarizer","department":"academic_affairs","id":"agent_summarizer"},"parents":[]},
+  {"uid":{"type":"Agent","id":"agent_grader_cs101"},"attrs":{"role":"grader","course_scope":"CS101","id":"agent_grader_cs101"},"parents":[]},
+  {"uid":{"type":"Agent","id":"agent_qa"},"attrs":{"role":"qa_agent","id":"agent_qa"},"parents":[]},
+  {"uid":{"type":"Action","id":"read"},"attrs":{},"parents":[]},
+  {"uid":{"type":"Action","id":"write"},"attrs":{},"parents":[]},
+  {"uid":{"type":"Action","id":"search"},"attrs":{},"parents":[]},
+  {"uid":{"type":"Action","id":"execute"},"attrs":{},"parents":[]},
+  {"uid":{"type":"Resource","id":"."},"attrs":{"type":"directory","sensitivity":"low","path":".","id":"."},"parents":[]},
+  {"uid":{"type":"Resource","id":"data"},"attrs":{"type":"directory","sensitivity":"low","path":"data","id":"data"},"parents":[{"type":"Resource","id":"."}]},
+  {"uid":{"type":"Resource","id":"output"},"attrs":{"type":"directory","sensitivity":"low","path":"output","id":"output"},"parents":[{"type":"Resource","id":"."}]},
+  {"uid":{"type":"Resource","id":"try2"},"attrs":{"type":"directory","sensitivity":"low","path":"try2","id":"try2"},"parents":[{"type":"Resource","id":"."}]},
+  {"uid":{"type":"Resource","id":"data/students.csv"},"attrs":{"type":"student_records","course":"all","sensitivity":"medium","path":"data/students.csv","id":"data/students.csv"},"parents":[{"type":"Resource","id":"data"}]},
+  {"uid":{"type":"Resource","id":"data/cs101_grades.csv"},"attrs":{"type":"grades","course":"CS101","sensitivity":"high","path":"data/cs101_grades.csv","id":"data/cs101_grades.csv"},"parents":[{"type":"Resource","id":"data"}]},
+  {"uid":{"type":"Resource","id":"data/cs102_grades.csv"},"attrs":{"type":"grades","course":"CS102","sensitivity":"high","path":"data/cs102_grades.csv","id":"data/cs102_grades.csv"},"parents":[{"type":"Resource","id":"data"}]},
+  {"uid":{"type":"Resource","id":"output/report.txt"},"attrs":{"type":"report","sensitivity":"low","path":"output/report.txt","id":"output/report.txt"},"parents":[{"type":"Resource","id":"output"}]},
+  {"uid":{"type":"Resource","id":"try2/requirements.txt"},"attrs":{"type":"requirements","sensitivity":"low","path":"try2/requirements.txt","id":"try2/requirements.txt"},"parents":[{"type":"Resource","id":"try2"}]},
+  {"uid":{"type":"Resource","id":"policy/resources.json"},"attrs":{"type":"system_config","sensitivity":"critical","path":"policy/resources.json","id":"policy/resources.json"},"parents":[{"type":"Resource","id":"."}]},
+  {"uid":{"type":"Resource","id":"policy/subjects.json"},"attrs":{"type":"system_config","sensitivity":"critical","path":"policy/subjects.json","id":"policy/subjects.json"},"parents":[{"type":"Resource","id":"."}]},
+  {"uid":{"type":"Resource","id":"policy/policies.cedar"},"attrs":{"type":"system_config","sensitivity":"critical","path":"policy/policies.cedar","id":"policy/policies.cedar"},"parents":[{"type":"Resource","id":"."}]},
+  {"uid":{"type":"Resource","id":"policy/schema.cedar"},"attrs":{"type":"system_config","sensitivity":"critical","path":"policy/schema.cedar","id":"policy/schema.cedar"},"parents":[{"type":"Resource","id":"."}]}
+]

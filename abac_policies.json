@@ -1,0 +1,8 @@
+[
+  {"id":"deny_system_config","content":"forbid (principal, action == Action::\"read\", resource) when { resource has type && resource.type == \"system_config\" };"},
+  {"id":"summarizer_read_student_records","content":"permit (principal, action == Action::\"read\", resource) when { principal has role && principal.role == \"summarizer\" && resource has type && resource.type == \"student_records\" };"},
+  {"id":"grader_course_access","content":"permit (principal, action in [Action::\"read\", Action::\"write\"], resource) when { principal has role && principal.role == \"grader\" && principal has course_scope && resource has course && principal.course_scope == resource.course };"},
+  {"id":"qa_write_report","content":"permit (principal, action == Action::\"write\", resource in Resource::\"output\") when { principal has role && principal.role == \"qa_agent\" };"},
+  {"id":"qa_read_workspace","content":"permit (principal, action == Action::\"read\", resource in Resource::\".\") when { principal has role && principal.role == \"qa_agent\" };"},
+  {"id":"qa_read_mtp1_requirements","content":"permit (principal, action == Action::\"read\", resource == Resource::\"try2/requirements.txt\") when { principal has role && principal.role == \"qa_agent\" };"}
+]

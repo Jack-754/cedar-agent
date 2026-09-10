@@ -19,10 +19,10 @@ print_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
 # Default configuration
 CEDAR_AGENT_BIN="./target/release/cedar-agent"
-SCHEMA_FILE="scripts/cedar_agent_schema.json"
-DATA_FILE="scripts/cedar_agent_data.json"
-POLICIES_FILE="scripts/cedar_agent_policies.json"
-PORT=8280
+SCHEMA_FILE="abac_schema.json"
+DATA_FILE="abac_data.json"
+POLICIES_FILE="abac_policies.json"
+PORT=8180
 LOG_LEVEL="debug"
 ADDR="0.0.0.0"
 
@@ -56,20 +56,20 @@ while [ $# -gt 0 ]; do
     --help)
       echo "Usage: $0 [OPTIONS]"
       echo ""
-      echo "Start Cedar Agent with MySQL testing configuration"
+      echo "Start Cedar Agent with the ABAC application configuration"
       echo ""
       echo "Options:"
       echo "  --cedar-agent PATH    Path to cedar-agent binary (default: ./target/release/cedar-agent)"
-      echo "  --schema FILE         Schema JSON file (default: scripts/cedar_agent_schema.json)"
-      echo "  --data FILE           Data JSON file (default: scripts/cedar_agent_data.json)"
-      echo "  --policies FILE       Policies JSON file (default: scripts/cedar_agent_policies.json)"
-      echo "  --port PORT           Port to listen on (default: 8280)"
+      echo "  --schema FILE         Schema JSON file (default: abac_schema.json)"
+      echo "  --data FILE           Data JSON file (default: abac_data.json)"
+      echo "  --policies FILE       Policies JSON file (default: abac_policies.json)"
+      echo "  --port PORT           Port to listen on (default: 8180)"
       echo "  --log-level LEVEL     Log level: error|warn|info|debug|trace (default: debug)"
       echo "  --help                Show this help"
       echo ""
       echo "Example:"
       echo "  $0"
-      echo "  $0 --port 8280 --log-level info"
+      echo "  $0 --port 8180 --log-level info"
       exit 0
       ;;
     *)
@@ -146,4 +146,3 @@ exec "$CEDAR_AGENT_BIN" \
   --policies "$POLICIES_FILE" \
   --addr "$ADDR" \
   --port "$PORT"
-
